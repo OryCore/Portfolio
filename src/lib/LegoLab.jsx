@@ -6,7 +6,7 @@ import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphe
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload("/models/LegoLab.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}models/LegoLab.glb`);
 
 /* ── Error boundary ─────────────────────────────────────────────────────── */
 
@@ -86,7 +86,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const rot = useRef(new THREE.Vector3());
   const dir = useRef(new THREE.Vector3());
 
-  const { scene: gltf } = useGLTF("/models/LegoLab.glb");
+  const { scene: gltf } = useGLTF(`${import.meta.env.BASE_URL}models/LegoLab.glb`);
   const { width, height } = useThree((s) => s.size);
   const ropeColor = useTokenColor("--foreground", "#ffffff");
 

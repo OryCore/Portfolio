@@ -73,6 +73,24 @@ const loadEntries = () => {
     const badgeUrl = mediaModules[`${folderPath}badge.webp`] || null;
 
     return { id, category, meta, content: cleanContent, badgeUrl };
+    /*
+cleanContent = cleanContent.replace(/\]\(([^)]+\.(webp|webm|mp4|png|jpg|jpeg|gif|avif))\)/gi, (fullMatch, filename) => {
+      const cleanName = filename.replace(/^\.\//, "");
+      const resolvedUrl = mediaModules[`${folderPath}${cleanName}`];
+      return resolvedUrl ? `](${import.meta.env.BASE_URL}${resolvedUrl.replace(/^\//, "")})` : fullMatch;
+    });
+
+    const badgeUrl = mediaModules[`${folderPath}badge.webp`] || null;
+
+    return { 
+      id, 
+      category, 
+      meta, 
+      content: cleanContent, 
+      badgeUrl: badgeUrl ? `${import.meta.env.BASE_URL}${badgeUrl.replace(/^\//, "")}` : null 
+    };
+
+    */
   });
 };
 
@@ -477,7 +495,7 @@ export default function Lab() {
 
             {/* Original Massive ASCII Object */}
             <div className="rotate-6 w-[500px] h-[600px] xl:w-[600px] xl:h-[700px] relative z-20 pointer-events-none flex items-center justify-center">
-              <AsciiObject src="/models/Flask.glb" colored={true} invertColor={isLight} autoRotate={true} autoRotateSpeed={1.0} scale={3.8} className="w-full h-full opacity-80 drop-shadow-xl mix-blend-screen" />
+              <AsciiObject src={`${import.meta.env.BASE_URL}/models/Flask.glb`} colored={true} invertColor={isLight} autoRotate={true} autoRotateSpeed={1.0} scale={3.8} className="w-full h-full opacity-80 drop-shadow-xl mix-blend-screen" />
             </div>
           </div>
         ) : (

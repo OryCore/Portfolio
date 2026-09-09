@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useAtom } from "jotai";
 import { themeAtom } from "./lib/atoms";
 import { Sun, Moon } from "lucide-react";

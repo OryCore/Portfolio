@@ -116,8 +116,8 @@ export default function Home() {
 
             {/* Image container */}
             <div className="relative w-[85%] max-w-[18rem] sm:max-w-sm aspect-[7/4] -mt-[5%] mx-auto">
-              <img src="/mike.webp" className="w-[66%] absolute -left-[8%] -top-[4%] brightness-90 object-contain rotate-10 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Mike" />
-              <img src="/patrick.webp" className="w-[66%] absolute -right-[8%] -top-[10%] object-contain -rotate-6 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Patrick" />
+              <img src={`${import.meta.env.BASE_URL}mike.webp`} className="w-[66%] absolute -left-[8%] -top-[4%] brightness-90 object-contain rotate-10 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Mike" />
+              <img src={`${import.meta.env.BASE_URL}patrick.webp`} className="w-[66%] absolute -right-[8%] -top-[10%] object-contain -rotate-6 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Patrick" />
             </div>
 
             {/* fade into the card body */}
@@ -143,7 +143,7 @@ export default function Home() {
 
           {/* Profile Avatar */}
           <div className="absolute top-38 -translate-y-1/2 left-6 sm:left-8 size-38 rounded-3xl z-10 shadow-md border-4 border-card bg-muted overflow-hidden flex items-center justify-center">
-            <img src="portrait.jpg" alt="Orkun Yiğit Cengiz" className="w-full h-full object-cover object-[0_-6px]" />
+            <img src={`${import.meta.env.BASE_URL}portrait.jpg`} alt="Orkun Yiğit Cengiz" className="w-full h-full object-cover object-[0_-6px]" />
           </div>
 
           {/* Bottom Content */}
