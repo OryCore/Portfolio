@@ -1,4 +1,3 @@
-// src/pages/Lab.jsx
 import React, { useState, useMemo, useEffect, useLayoutEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Calendar, ExternalLink, Search, ChevronLeft, ChevronRight, FileText, User, Copy, Check, BookOpen } from "lucide-react";
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { AsciiObject } from "@/components/AsciiObject";
 import { createMarkdown } from "@/lib/marktheme";
 
-const ITEMS_PER_PAGE = 4; // Restored to original spacious count
+const ITEMS_PER_PAGE = 4;
 
 // --- Dynamic Content Loader ---
 const rawModules = import.meta.glob("/content/*/*/entry.md", { query: "?raw", import: "default", eager: true });
@@ -85,7 +84,7 @@ const ANCHOR_CSS = `
     html { scroll-behavior: smooth; }
   }
 `;
-/** DOIs may be bare (`10.1000/xyz`) or already a URL. */
+/* DOIs may be bare (`10.1000/xyz`) or already a URL. */
 const doiUrl = (raw) => {
   const v = String(raw ?? "").trim();
   if (!v) return null;
@@ -165,7 +164,6 @@ function useHeadings(containerRef, html) {
   return headings;
 }
 
-// --- Detail Pane Reading View ---
 const ReadingView = ({ entry, onBack }) => {
   const [copied, setCopied] = useState(false);
   const proseRef = useRef(null);

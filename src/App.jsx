@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { Suspense, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useAtom } from "jotai";
@@ -6,7 +5,6 @@ import { themeAtom } from "./lib/atoms";
 import { Sun, Moon } from "lucide-react";
 import Home from "./pages/Home";
 
-// Removed the .catch() so the real error hits the console
 const Lab = React.lazy(() => import("./pages/Lab"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 

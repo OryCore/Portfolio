@@ -1,9 +1,8 @@
-// src/pages/Home.jsx
 import React from "react";
 import { Link2, BadgeCheck, FlaskConical, Wind, Dumbbell, Dna, Piano, Drum, NotebookPen, FolderOpen, Briefcase, GraduationCap, MapPin, Mail, Camera, Languages, Guitar, Telescope, RadioTower, Motorbike, BriefcaseBusiness } from "lucide-react";
 import { GitHubLight, LinkedIn } from "developer-icons";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Lego from "@/lib/LegoSuit";
 import { Link } from "react-router-dom";
@@ -103,7 +102,7 @@ export default function Home() {
       {/* Ambient background glow */}
       <div className="absolute top-1/3 left-1/4 -translate-y-1/2 w-96 h-96 sm:w-2/3 sm:h-2/3 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Main Container - items-stretch ensures exactly equal heights */}
+      {/* Main Container */}
       <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-12 z-10 w-full max-w-6xl justify-center">
         {/* --- LEFT CARD --- */}
         <Card className="w-full max-w-lg flex flex-col shrink-0 overflow-hidden shadow-2xl border-border bg-card relative p-0">
@@ -115,7 +114,7 @@ export default function Home() {
             {/* subtle top light */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/[0.04] to-transparent" />
 
-            {/* Image container: perfectly scaled overlap and rotation for all devices */}
+            {/* Image container */}
             <div className="relative w-[85%] max-w-[18rem] sm:max-w-sm aspect-[7/4] -mt-[5%] mx-auto">
               <img src="/mike.webp" className="w-[66%] absolute -left-[8%] -top-[4%] brightness-90 object-contain rotate-10 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Mike" />
               <img src="/patrick.webp" className="w-[66%] absolute -right-[8%] -top-[10%] object-contain -rotate-6 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" alt="Patrick" />
@@ -218,21 +217,18 @@ export default function Home() {
                   to: "/lab?tab=projects",
                   Icon: FolderOpen,
                   label: "Projects",
-                  // Sky/Blue - softened for the new theme
                   cls: "border-sky-500/20 bg-sky-500/10 text-sky-700 dark:text-sky-400 hover:bg-sky-500/20",
                 },
                 {
                   to: "/lab?tab=research",
                   Icon: FlaskConical,
                   label: "Research",
-                  // Mapped to Emerald to perfectly complement your new primary green theme
                   cls: "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/20",
                 },
                 {
                   to: "/lab?tab=journal",
                   Icon: NotebookPen,
                   label: "Journal",
-                  // Violet - softened for the new theme
                   cls: "border-violet-500/20 bg-violet-500/10 text-violet-700 dark:text-violet-400 hover:bg-violet-500/20",
                 },
               ].map(({ to, Icon, label, cls }) => (
