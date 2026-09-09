@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: "Geist Variable", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ---------------------------------------------------------------
+   Petrol & Paper
+   Light: warm paper neutrals, ink-brown text, deep petrol accent.
+   Dark:  cool ink-blue neutrals, the same petrol lifted to glow.
+   --------------------------------------------------------------- */
+
+:root {
+  /* surfaces — background sits below card, so cards actually read as cards */
+  --background: oklch(0.978 0.005 85);
+  --card: oklch(0.995 0.003 85);
+  --card-foreground: oklch(0.245 0.012 75);
+  --popover: oklch(0.998 0.002 85);
+  --popover-foreground: oklch(0.245 0.012 75);
+  --foreground: oklch(0.245 0.012 75);
+
+  /* brand: Changed to a crisp, legible Emerald Green */
+  --primary: oklch(0.52 0.12 150);
+  --primary-foreground: oklch(0.985 0.008 150);
+
+  /* quiet surfaces */
+  --secondary: oklch(0.951 0.009 85);
+  --secondary-foreground: oklch(0.31 0.014 75);
+  --muted: oklch(0.955 0.008 85);
+  --muted-foreground: oklch(0.525 0.015 75);
+
+  /* mint wash for hovers and highlights (was petrol) */
+  --accent: oklch(0.94 0.035 150);
+  --accent-foreground: oklch(0.355 0.062 150);
+
+  --destructive: oklch(0.552 0.168 27);
+
+  --border: oklch(0.898 0.009 80);
+  --input: oklch(0.888 0.01 80);
+
+  /* Ring: Green */
+  --ring: oklch(0.545 0.1 150);
+
+  /* charts: green → blue → ochre → clay → plum */
+  --chart-1: oklch(0.535 0.1 150);
+  --chart-2: oklch(0.615 0.082 248);
+  --chart-3: oklch(0.72 0.108 78);
+  --chart-4: oklch(0.615 0.125 36);
+  --chart-5: oklch(0.505 0.082 308);
+
+  --radius: 0.625rem;
+
+  /* sidebar sits a step deeper than the page */
+  --sidebar: oklch(0.958 0.008 85);
+  --sidebar-foreground: oklch(0.29 0.013 75);
+
+  /* Sidebar mapped to the new greens */
+  --sidebar-primary: oklch(0.52 0.12 150);
+  --sidebar-primary-foreground: oklch(0.985 0.008 150);
+  --sidebar-accent: oklch(0.94 0.035 150);
+  --sidebar-accent-foreground: oklch(0.355 0.062 150);
+  --sidebar-border: oklch(0.892 0.009 80);
+  --sidebar-ring: oklch(0.545 0.1 150);
+}
+
+.dark {
+  /* Backgrounds left as dark slate - makes the green pop perfectly */
+  --background: oklch(0.172 0.012 244);
+  --card: oklch(0.218 0.013 244);
+  --card-foreground: oklch(0.955 0.005 240);
+  --popover: oklch(0.232 0.014 244);
+  --popover-foreground: oklch(0.955 0.005 240);
+  --foreground: oklch(0.955 0.005 240);
+
+  /* Primary: Changed to a bright, vibrant green-400 equivalent */
+  --primary: oklch(0.83 0.15 150);
+  --primary-foreground: oklch(0.2 0.04 150);
+
+  --secondary: oklch(0.278 0.014 244);
+  --secondary-foreground: oklch(0.94 0.005 240);
+  --muted: oklch(0.262 0.013 244);
+  --muted-foreground: oklch(0.715 0.017 242);
+
+  /* Accent: Changed to a deep dark green (This controls your gradient background!) */
+  --accent: oklch(0.315 0.05 150);
+  --accent-foreground: oklch(0.885 0.06 150);
+
+  --destructive: oklch(0.658 0.168 25);
+
+  --border: oklch(0.985 0.02 240 / 12%);
+  --input: oklch(0.985 0.02 240 / 16%);
+
+  /* Ring: Green */
+  --ring: oklch(0.7 0.12 150);
+
+  --chart-1: oklch(0.715 0.098 200);
+  --chart-2: oklch(0.685 0.09 250);
+  --chart-3: oklch(0.785 0.108 82);
+  --chart-4: oklch(0.685 0.128 36);
+  --chart-5: oklch(0.645 0.098 310);
+
+  --sidebar: oklch(0.198 0.012 244);
+  --sidebar-foreground: oklch(0.925 0.005 240);
+  /* Sidebar mapped to the new greens */
+  --sidebar-primary: oklch(0.83 0.15 150);
+  --sidebar-primary-foreground: oklch(0.2 0.04 150);
+  --sidebar-accent: oklch(0.298 0.04 150);
+  --sidebar-accent-foreground: oklch(0.885 0.06 150);
+  --sidebar-border: oklch(0.985 0.02 240 / 9%);
+  --sidebar-ring: oklch(0.7 0.12 150);
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  @layer base {
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--muted-foreground);
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+  }
+}
